@@ -31,7 +31,7 @@ local TextService = Services.TextService
 local getgenv = getgenv or function()
 	return shared
 end
-local protectgui = protectgui or (syn and syn.protect_gui) or function() end
+local protectgui = protectgui or function() end
 local gethui = gethui or function()
 	return Services.CoreGui
 end
@@ -4527,7 +4527,7 @@ function Library:CreatePathEditor(info)
 			Parent = main,
 			Name = "Area",
 			RichText = true,
-			Text = hasArea and ("<b>" .. point.area .. "</b>") or (positional and "—" or ""),
+			Text = hasArea and ("<b>" .. point.area .. "</b>") or (positional and "-" or ""),
 			TextColor3 = hasArea and "Accent" or "DimColor",
 			TextStrokeTransparency = 0.5,
 			BackgroundTransparency = 1,
